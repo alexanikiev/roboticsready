@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello‑world
+  name: helloworld
   namespace: roboticsready
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello‑world
+      app: helloworld
   template:
     metadata:
       labels:
-        app: hello‑world
+        app: helloworld
     spec:
       containers:
-      - name: hello‑world
+      - name: helloworld
         # you can use any tiny image—here we’ll just echo every 5s
         image: busybox:1.35
         command: ["/bin/sh","-c"]
