@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello‑world
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello‑world
+  template:
+    metadata:
+      labels:
+        app: hello‑world
+    spec:
+      containers:
+      - name: hello‑world
+        # you can use any tiny image—here we’ll just echo every 5s
+        image: busybox:1.35
+        command: ["/bin/sh","-c"]
+        args:
+        - while true; do echo "👋 Hello from Flux on Arc!" ; sleep 5; done
